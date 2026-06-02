@@ -1,0 +1,100 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "algovoi-atb"
+version = "0.1.1"
+description = "AlgoVoi Agent Trust Bench client — run your agent through 166 adversarial x402 payment profiles and earn a Falcon-1024 signed reputation certificate."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "AlgoVoi", email = "hello@algovoi.co.uk" },
+]
+keywords = [
+    "algovoi", "agent-trust-bench", "atb", "x402", "ai-agent",
+    "payment-security", "adversarial-testing", "reputation", "falcon-1024",
+    "pqc", "post-quantum",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27,<1.0",
+    "pydantic>=2.6,<3.0",
+]
+
+[project.optional-dependencies]
+verify = [
+    "pqcrypto>=0.4.0",
+    "rfc8785>=0.1.2",
+]
+inspect = [
+    "inspect-ai>=0.3",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+    "ruff>=0.4",
+    "mypy>=1.10",
+    "build>=1.2",
+    "twine>=5.0",
+    "pqcrypto>=0.4.0",
+    "rfc8785>=0.1.2",
+    "inspect-ai>=0.3",
+]
+
+[project.urls]
+Homepage = "https://docs.algovoi.co.uk/agent-trust-bench"
+Documentation = "https://docs.algovoi.co.uk/agent-trust-bench"
+Repository = "https://github.com/chopmob-cloud/AlgoVoi-Platform-Adapters"
+Issues = "https://github.com/chopmob-cloud/AlgoVoi-Platform-Adapters/issues"
+Changelog = "https://github.com/chopmob-cloud/AlgoVoi-Platform-Adapters/blob/master/algovoi-atb/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/algovoi_atb"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/README.md",
+    "/CHANGELOG.md",
+    "/LICENSE",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning:pydantic.*",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+disallow_any_generics = true
+plugins = ["pydantic.mypy"]
