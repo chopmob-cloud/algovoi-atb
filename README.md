@@ -63,8 +63,10 @@ async def my_agent(profile_id: str, challenge: dict) -> bool:
     return True
 
 result = await run_bench(my_agent, label="my-agent-v1")
-print(result.score, result.passed, result.report_url)
+print(result.run_id, result.score, result.passed, result.report_url)
 ```
+
+`RunResult` fields: `run_id` · `score` · `passed` · `report_url` · `certificate_b64` · `profiles` · `score_components`
 
 ---
 
