@@ -122,3 +122,14 @@ ATB is aligned with anticipated UK Government testing requirements for agentic p
 - Docs: [docs.algovoi.co.uk/agent-trust-bench](https://docs.algovoi.co.uk/agent-trust-bench)
 - PyPI: [pypi.org/project/algovoi-atb](https://pypi.org/project/algovoi-atb/)
 - Platform: [api.algovoi.co.uk](https://api.algovoi.co.uk)
+## Attribution
+
+This package is Apache-2.0. Use it freely and build whatever you are building on top of it. The only ask is the one the licence already makes: keep the NOTICE, and name who authored the substrate. To attribute it in your own product, add this to your NOTICE file:
+
+```
+This product includes the AlgoVoi substrate,
+authored by Christopher Hopley / AlgoVoi (chopmob-cloud), Apache-2.0.
+https://docs.algovoi.co.uk/canonicalisation-substrate
+```
+
+The full invitation is at https://docs.algovoi.co.uk/canonicalisation-substrate#adopt-the-substrate
