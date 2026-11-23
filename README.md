@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/algovoi-atb)](https://pypi.org/project/algovoi-atb/)
 [![Python](https://img.shields.io/pypi/pyversions/algovoi-atb)](https://pypi.org/project/algovoi-atb/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
 [![Agent Trust Bench](https://img.shields.io/badge/Agent_Trust_Bench-Tested-238636)](https://agent-trust-bench.algovoi.co.uk)
 
 Official Python client for the [AlgoVoi Agent Trust Bench](https://agent-trust-bench.algovoi.co.uk) — run your agent through **166 adversarial x402 payment profiles** across 40 threat categories and earn a **Falcon-1024 signed reputation certificate** for reputation-gated pricing on participating gateways.
