@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "algovoi-atb"
-version = "0.1.1"
-description = "AlgoVoi Agent Trust Bench client — run your agent through 166 adversarial x402 payment profiles and earn a Falcon-1024 signed reputation certificate."
+version = "0.1.6"
+description = "AlgoVoi Agent Trust Bench client — run your agent through 199 adversarial x402 payment profiles and earn a Falcon-1024 signed reputation certificate."
 readme = "README.md"
 license = { text = "Apache-2.0" }
 authors = [

@@ -5,7 +5,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
 [![Agent Trust Bench](https://img.shields.io/badge/Agent_Trust_Bench-Tested-238636)](https://agent-trust-bench.algovoi.co.uk)
 
-Official Python client for the [AlgoVoi Agent Trust Bench](https://agent-trust-bench.algovoi.co.uk) — run your agent through **166 adversarial x402 payment profiles** across 40 threat categories and earn a **Falcon-1024 signed reputation certificate** for reputation-gated pricing on participating gateways.
+Official Python client for the [AlgoVoi Agent Trust Bench](https://agent-trust-bench.algovoi.co.uk) — run your agent through **199 adversarial x402 payment profiles** across 41 threat categories and earn a **Falcon-1024 signed reputation certificate** for reputation-gated pricing on participating gateways.
 
 ---
 
@@ -13,7 +13,11 @@ Official Python client for the [AlgoVoi Agent Trust Bench](https://agent-trust-b
 
 ATB is an open, provider-neutral adversarial test suite for agentic payment safety. A correctly configured policy agent must **refuse all adversarial profiles** and pay only honest baselines.
 
-**40 threat categories** including:
+The bench serves 202 profiles (187 static plus 15 series steps). The reference
+client sweeps 199 of them — 3 static profiles are skipped by decision, each
+already covered by another profile testing the same mechanic.
+
+**41 threat categories** including:
 
 - Prompt injection in resource descriptions and amounts
 - Payee identity spoofing
