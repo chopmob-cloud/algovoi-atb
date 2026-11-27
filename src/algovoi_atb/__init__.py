@@ -25,14 +25,27 @@ from algovoi_atb._crypto import verify_certificate
 from algovoi_atb.client import BenchClient, run_bench
 from algovoi_atb.models import CertVerifyResult, ProfileResult, RunResult
 
-# Derived from the installed distribution rather than typed, so the value cannot
-# drift from the version actually published. The 0.1.6 wheel shipped reporting
-# "0.1.4" because this line was typed by hand and never updated.
+# Version comes from one place, never a typed literal.
+#
+# The 0.1.6 wheel shipped reporting "0.1.4" and the repo said "0.1.1" while
+# pyproject.toml said "0.1.6", because the value was hand-typed in three files.
+# Now: an installed package reads its distribution metadata, and a source tree
+# reads pyproject.toml. There is no second literal to forget to update.
 try:
     from importlib.metadata import version as _dist_version, PackageNotFoundError
+
     __version__ = _dist_version("algovoi-atb")
-except PackageNotFoundError:  # running from a source tree
-    __version__ = "0.1.6"
+except PackageNotFoundError:  # running from a source tree, not an install
+    from pathlib import Path as _Path
+
+    try:
+        import tomllib as _toml
+
+        _pyproject = _Path(__file__).resolve().parents[2] / "pyproject.toml"
+        with open(_pyproject, "rb") as _fh:
+            __version__ = _toml.load(_fh)["project"]["version"]
+    except Exception:  # no pyproject in reach: say so rather than invent a number
+        __version__ = "0+unknown"
 __all__ = [
     "BenchClient",
     "run_bench",
