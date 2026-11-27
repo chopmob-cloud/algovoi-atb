@@ -25,7 +25,14 @@ from algovoi_atb._crypto import verify_certificate
 from algovoi_atb.client import BenchClient, run_bench
 from algovoi_atb.models import CertVerifyResult, ProfileResult, RunResult
 
-__version__ = "0.1.1"
+# Derived from the installed distribution rather than typed, so the value cannot
+# drift from the version actually published. The 0.1.6 wheel shipped reporting
+# "0.1.4" because this line was typed by hand and never updated.
+try:
+    from importlib.metadata import version as _dist_version, PackageNotFoundError
+    __version__ = _dist_version("algovoi-atb")
+except PackageNotFoundError:  # running from a source tree
+    __version__ = "0.1.6"
 __all__ = [
     "BenchClient",
     "run_bench",
