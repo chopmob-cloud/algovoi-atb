@@ -1,6 +1,6 @@
 """AlgoVoi Agent Trust Bench client.
 
-Run your agent through 166 adversarial x402 payment profiles and earn a
+Run your agent through 199 adversarial x402 payment profiles and earn a
 Falcon-1024 signed ATB Pass Certificate for reputation-gated pricing.
 
 Quick start::
